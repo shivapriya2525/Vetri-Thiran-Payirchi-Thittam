@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommendation History - PocketSmart AI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Details Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-xl);
+      padding: 2rem;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: #f1f5f9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #64748b;
+      transition: var(--transition);
+    }
+    .modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/dashboard" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-wallet"></i></div>
+        <span>PocketSmart</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/dashboard" class="nav-link"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="/home-planner" class="nav-link"><i class="fa-solid fa-house"></i> Home Budget</a></li>
+        <li><a href="/party-planner" class="nav-link"><i class="fa-solid fa-cake-candles"></i> Party Budget</a></li>
+        <li><a href="/jewelry-planner" class="nav-link"><i class="fa-solid fa-gem"></i> Jewelry Budget</a></li>
+        <li><a href="/history" class="nav-link active"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <span style="font-size: 0.9rem; font-weight: 600; color: #475569;">{{ user.username }}</span>
+        <a href="/logout" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header Banner -->
+    <div class="page-header" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); margin-bottom: 2.5rem;">
+      <h1>Your Recommendation History</h1>
+      <p>View and manage all your previous budget plans and recommendations</p>
+    </div>
+
+    <!-- History Grid -->
+    <div style="margin-bottom: 2rem;">
+      <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.35rem; color: #1e293b; margin-bottom: 1.5rem;">
+        <i class="fa-solid fa-clock-rotate-left" style="color: var(--primary);"></i> Recent Recommendations
+      </h3>
+
+      {% if history and history|length > 0 %}
+        <div class="card-grid">
+          {% for item in history %}
+            <div class="card" style="border-top: 4px solid {% if item.type == 'home' %}#2563eb{% elif item.type == 'party' %}#d97706{% else %}#db2777{% endif %};">
+              <div class="card-body">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem;
+                      {% if item.type == 'home' %}background: #dbeafe; color: #1d4ed8;
+                      {% elif item.type == 'party' %}background: #fef3c7; color: #d97706;
+                      {% else %}background: #fce7f3; color: #db2777;{% endif %}">
+                      {% if item.type == 'home' %}<i class="fa-solid fa-house"></i>
+                      {% elif item.type == 'party' %}<i class="fa-solid fa-cake-candles"></i>
+                      {% else %}<i class="fa-solid fa-gem"></i>{% endif %}
+                    </div>
+                    <div>
+                      <strong style="color: #0f172a; font-size: 1.05rem;">{{ item.title }}</strong>
+                    </div>
+                  </div>
+                  <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500;">{{ item.timestamp }}</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; background: #f8fafc; border-radius: var(--radius-sm); padding: 0.85rem; margin-bottom: 1rem; border: 1px solid #e2e8f0;">
+                  <div>
+                    <div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Total Budget</div>
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #0f172a;">
+                      ₹{{ "{:,.0f}".format(item.result_summary.get('total_budget') or item.input_summary.get('total_budget') or item.input_summary.get('budget') or 0.0) }}
+                    </div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Remaining</div>
+                    <div style="font-size: 1.15rem; font-weight: 800; color: #10b981;">
+                      ₹{{ "{:,.0f}".format(item.result_summary.get('remaining_budget') or 0.0) }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Input Details Summary -->
+                <div style="font-size: 0.85rem; color: #475569; margin-bottom: 1.5rem; flex: 1;">
+                  {% if item.type == 'home' %}
+                    <div><strong>Rooms:</strong> {{ item.input_summary.get('rooms') or ('Living Room' if item.input_summary.get('has_living_room') else 'General') }}</div>
+                    <div><strong>Items:</strong> Lights: {{ item.input_summary.get('num_lights') or item.input_summary.get('lights') or 0 }}, Fans: {{ item.input_summary.get('num_fans') or item.input_summary.get('fans') or 0 }}, Furniture: {{ item.input_summary.get('num_furniture') or item.input_summary.get('furniture') or 0 }}</div>
+                  {% elif item.type == 'party' %}
+                    <div><strong>Party Type:</strong> {{ item.input_summary.get('party_type') or 'General Party' }}</div>
+                    <div><strong>Guests:</strong> {{ item.input_summary.get('num_guests') or item.input_summary.get('guests') or 10 }} &bull; <strong>Venue:</strong> {{ item.input_summary.get('venue_type') or item.input_summary.get('venue') or 'Home' }}</div>
+                  {% else %}
+                    <div><strong>Occasion:</strong> {{ item.input_summary.get('occasion') or 'Special Event' }}</div>
+                    <div><strong>Outfit Image:</strong> {% if item.input_summary.get('image') or item.input_summary.get('with_image') %}Yes{% else %}No{% endif %}</div>
+                  {% endif %}
+                </div>
+
+                <button class="btn btn-primary btn-block btn-sm" onclick="openDetailsModal('{{ item.id }}')">
+                  <i class="fa-solid fa-eye"></i> View Full Details
+                </button>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div style="text-align: center; padding: 4rem 1rem; background: white; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <i class="fa-solid fa-clipboard-list" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 1rem; display: block;"></i>
+          <h3 style="color: #334155; margin-bottom: 0.5rem;">No Saved Recommendations Yet</h3>
+          <p style="color: #64748b; margin-bottom: 1.5rem;">Create a budget plan using any of our smart planners to see your recommendations saved here.</p>
+          <a href="/home-planner" class="btn btn-primary">Start Planning Now</a>
+        </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <!-- Full Details Modal -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeDetailsModal()">&times;</button>
+      <div id="modalContent">
+        <div style="text-align: center; padding: 2rem;">
+          <div class="spinner"></div>
+          <div>Loading details...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" style="padding: 2rem 1.5rem;">
+    <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+      &copy; 2025 PocketSmart AI. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('detailsModal');
+    const modalContent = document.getElementById('modalContent');
+
+    async function openDetailsModal(recId) {
+      modal.style.display = 'flex';
+      modalContent.innerHTML = `
+        <div style="text-align: center; padding: 3rem;">
+          <div class="spinner"></div>
+          <div style="color: #64748b; margin-top: 1rem;">Loading recommendation details...</div>
+        </div>
+      `;
+
+      try {
+        const res = await fetch(`/recommendation-details/${recId}`);
+        if (!res.ok) throw new Error('Failed to load details');
+        const data = await res.json();
+        renderModalDetails(data);
+      } catch (err) {
+        modalContent.innerHTML = `<div style="color: var(--danger); text-align: center; padding: 2rem;">Error: ${err.message}</div>`;
+      }
+    }
+
+    function closeDetailsModal() {
+      modal.style.display = 'none';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeDetailsModal();
+    });
+
+    function renderModalDetails(item) {
+      const full = item.full_result || {};
+      const total = Number(full.total_budget || item.result_summary.total_budget || 0);
+      const remaining = Number(full.remaining_budget || item.result_summary.remaining_budget || 0);
+      const allocated = Math.max(0, total - remaining);
+
+      let contentHtml = `
+        <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0;">
+          <span class="tag" style="background: #dbeafe; color: #1d4ed8; text-transform: uppercase; margin-bottom: 0.4rem; display: inline-block;">${item.type}</span>
+          <h2 style="font-size: 1.5rem; color: #0f172a;">${item.title}</h2>
+          <div style="font-size: 0.85rem; color: #64748b;">Saved on ${item.timestamp}</div>
+        </div>
+
+        <div class="budget-summary-banner" style="padding: 1.25rem 1.5rem; margin-bottom: 1.5rem;">
+          <div class="summary-stat">
+            <span class="label">Total Budget</span>
+            <span class="value" style="font-size: 1.4rem;">₹${total.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+          </div>
+          <div class="summary-stat">
+            <span class="label">Allocated Spend</span>
+            <span class="value" style="font-size: 1.4rem;">₹${allocated.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+          </div>
+          <div class="summary-stat">
+            <span class="label">Remaining</span>
+            <span class="value remaining" style="font-size: 1.4rem;">₹${remaining.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+          </div>
+        </div>
+      `;
+
+      // Home & Party Breakdown
+      if (full.budget_breakdown) {
+        full.budget_breakdown.forEach(cat => {
+          contentHtml += `
+            <div class="rec-category-card" style="margin-bottom: 1.25rem;">
+              <div class="rec-category-header" style="padding: 0.75rem 1.25rem;">
+                <strong style="color: #1e293b;">${cat.category}</strong>
+                <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">₹${Number(cat.allocation || 0).toLocaleString('en-IN')}</span>
+              </div>
+              <div style="padding: 0.75rem 1.25rem;">
+          `;
+
+          (cat.items || []).forEach(it => {
+            let links = '';
+            if (it.shopping_links) {
+              Object.entries(it.shopping_links).forEach(([pl, link]) => {
+                links += `<a href="${link}" target="_blank" class="shop-badge badge-${pl}">${pl.toUpperCase()}</a>`;
+              });
+            }
+
+            contentHtml += `
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9;">
+                <div>
+                  <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">${it.name}</div>
+                  <div style="font-size: 0.8rem; color: #64748b;">${it.description || ''}</div>
+                  <div class="shopping-links" style="margin-top: 0.4rem;">${links}</div>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="color: #0f172a;">₹${Number(it.estimated_price || it.price || 0).toLocaleString('en-IN')}</strong>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Qty: ${it.quantity || 1}</div>
+                </div>
+              </div>
+            `;
+          });
+
+          contentHtml += `</div></div>`;
+        });
+      }
+
+      // Jewelry recommendations
+      if (full.jewelry_recommendations) {
+        full.jewelry_recommendations.forEach(j => {
+          let links = '';
+          if (j.shopping_links) {
+            Object.entries(j.shopping_links).forEach(([pl, link]) => {
+              links += `<a href="${link}" target="_blank" class="shop-badge badge-${pl}">${pl.toUpperCase()}</a>`;
+            });
+          }
+
+          contentHtml += `
+            <div class="rec-category-card" style="margin-bottom: 1.25rem; padding: 1rem 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                <div>
+                  <span class="tag tag-primary" style="font-size: 0.75rem; margin-bottom: 0.25rem; display: inline-block;">${j.item_type || 'Jewelry'}</span>
+                  <div style="font-weight: 700; color: #1e293b;">${j.description || j.name}</div>
+                  <div style="font-size: 0.85rem; color: #64748b;">Style: ${j.style || 'Elegant'}</div>
+                </div>
+                <strong style="color: #be185d; font-size: 1.15rem;">₹${Number(j.estimated_price || 0).toLocaleString('en-IN')}</strong>
+              </div>
+              <div class="shopping-links" style="margin-top: 0.5rem;">${links}</div>
+            </div>
+          `;
+        });
+      }
+
+      modalContent.innerHTML = contentHtml;
+    }
+  </script>
+
+</body>
+</html>

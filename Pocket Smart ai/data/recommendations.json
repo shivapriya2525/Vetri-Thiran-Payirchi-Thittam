@@ -1,0 +1,547 @@
+{
+  "sai": [
+    {
+      "id": "rec-728d693b",
+      "timestamp": "September 26, 2026 - 07:57 PM",
+      "type": "jewelry",
+      "title": "Wedding Reception Budget Plan",
+      "input_summary": {
+        "total_budget": 15000.0,
+        "occasion": "Wedding Reception",
+        "preferences": "Kundan and pearls, gold-plated",
+        "image": "/static/uploads/0061658975.jpg"
+      },
+      "result_summary": {
+        "total_budget": 15000.0,
+        "remaining_budget": 750.0,
+        "items_count": 3
+      },
+      "full_result": {
+        "outfit_analysis": {
+          "colors": [
+            "Sapphire Blue",
+            "Silver Frost Accents"
+          ],
+          "style": "Contemporary Indo-Western",
+          "formality": "Festive Celebration"
+        },
+        "total_budget": 15000.0,
+        "jewelry_recommendations": [
+          {
+            "item_type": "Necklace Set",
+            "description": "Gold-plated Kundan & Meenakari Choker with matching Maang Tikka for Wedding Reception",
+            "style": "Royal Heritage",
+            "estimated_price": 6750.0,
+            "search_terms": "kundan choker necklace set Kundan and pearls, gold-plated",
+            "shopping_links": {
+              "amazon": "https://www.amazon.in/s?k=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "flipkart": "https://www.flipkart.com/search?q=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "bluestone": "https://www.bluestone.com/search.html?query=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "tanishq": "https://www.tanishq.co.in/search?q=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "caratlane": "https://www.caratlane.com/search?q=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "melorra": "https://www.melorra.com/search?q=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated",
+              "meesho": "https://www.meesho.com/search?q=kundan+choker+necklace+set+Kundan+and+pearls%2C+gold-plated"
+            }
+          },
+          {
+            "item_type": "Jhumkas / Earrings",
+            "description": "Handcrafted temple jewelry floral drop jhumkas with pearl tassels",
+            "style": "Classic Traditional",
+            "estimated_price": 4500.0,
+            "search_terms": "temple jewelry gold jhumka earrings",
+            "shopping_links": {
+              "amazon": "https://www.amazon.in/s?k=temple+jewelry+gold+jhumka+earrings",
+              "flipkart": "https://www.flipkart.com/search?q=temple+jewelry+gold+jhumka+earrings",
+              "bluestone": "https://www.bluestone.com/search.html?query=temple+jewelry+gold+jhumka+earrings",
+              "tanishq": "https://www.tanishq.co.in/search?q=temple+jewelry+gold+jhumka+earrings",
+              "caratlane": "https://www.caratlane.com/search?q=temple+jewelry+gold+jhumka+earrings",
+              "melorra": "https://www.melorra.com/search?q=temple+jewelry+gold+jhumka+earrings",
+              "meesho": "https://www.meesho.com/search?q=temple+jewelry+gold+jhumka+earrings"
+            }
+          },
+          {
+            "item_type": "Bangles / Kada",
+            "description": "Pair of openable zircon stone studded royal brass kadas",
+            "style": "Festive Glam",
+            "estimated_price": 3000.0,
+            "search_terms": "antique gold plated openable bangles kada",
+            "shopping_links": {
+              "amazon": "https://www.amazon.in/s?k=antique+gold+plated+openable+bangles+kada",
+              "flipkart": "https://www.flipkart.com/search?q=antique+gold+plated+openable+bangles+kada",
+              "bluestone": "https://www.bluestone.com/search.html?query=antique+gold+plated+openable+bangles+kada",
+              "tanishq": "https://www.tanishq.co.in/search?q=antique+gold+plated+openable+bangles+kada",
+              "caratlane": "https://www.caratlane.com/search?q=antique+gold+plated+openable+bangles+kada",
+              "melorra": "https://www.melorra.com/search?q=antique+gold+plated+openable+bangles+kada",
+              "meesho": "https://www.meesho.com/search?q=antique+gold+plated+openable+bangles+kada"
+            }
+          }
+        ],
+        "styling_tips": [
+          "Keep the jewelry minimal if your outfit already features intricate embroidery or heavy neckwork.",
+          "Coordinate metal finishes\u2014match your watch hardware with your rings and earrings for a cohesive look.",
+          "Consider hypoallergenic sterling silver or skin-friendly brass to avoid irritation during long events.",
+          "CaratLane and Bluestone offer 15-day exchange and certified hallmarks for peace of mind."
+        ],
+        "remaining_budget": 750.0,
+        "uploaded_image_url": "/static/uploads/0061658975.jpg"
+      }
+    },
+    {
+      "id": "rec-1e8ab45b",
+      "timestamp": "September 26, 2026 - 07:57 PM",
+      "type": "party",
+      "title": "Birthday Budget Plan",
+      "input_summary": {
+        "total_budget": 25000.0,
+        "num_guests": 20,
+        "party_type": "Birthday",
+        "venue_type": "Community Banquet Hall",
+        "needs_catering": true,
+        "needs_decoration": true,
+        "needs_entertainment": true,
+        "additional_requirements": "Vegetarian buffet and retro music theme"
+      },
+      "result_summary": {
+        "total_budget": 25000.0,
+        "remaining_budget": 0.0,
+        "items_count": 5
+      },
+      "full_result": {
+        "total_budget": 25000.0,
+        "budget_breakdown": [
+          {
+            "category": "venue",
+            "allocation": 5000.0,
+            "items": [
+              {
+                "name": "Community Banquet Hall Arrangement",
+                "description": "Private celebration space configured for 20 guests",
+                "estimated_price": 5000.0,
+                "quantity": 1,
+                "search_terms": "party hall venue Community Banquet Hall",
+                "shopping_links": {
+                  "google": "https://www.google.com/search?q=party+hall+venue+Community+Banquet+Hall",
+                  "booking": "https://www.booking.com/search.html?ss=party+hall+venue+Community+Banquet+Hall",
+                  "makemytrip": "https://www.makemytrip.com/hotels/hotel-listing/?searchText=party+hall+venue+Community+Banquet+Hall",
+                  "oyorooms": "https://www.oyorooms.com/search/?location=party+hall+venue+Community+Banquet+Hall",
+                  "nobroker": "https://www.nobroker.in/property/search?searchTerm=party+hall+venue+Community+Banquet+Hall"
+                }
+              }
+            ]
+          },
+          {
+            "category": "catering",
+            "allocation": 11250.0,
+            "items": [
+              {
+                "name": "Party Buffet & Refreshment Combo",
+                "description": "Curated appetizers, mains, and beverage package for 20 guests",
+                "estimated_price": 11250.0,
+                "quantity": 1,
+                "search_terms": "party catering bulk food Birthday",
+                "shopping_links": {
+                  "swiggy": "https://www.swiggy.com/search?query=party+catering+bulk+food+Birthday",
+                  "zomato": "https://www.zomato.com/search?q=party+catering+bulk+food+Birthday"
+                }
+              }
+            ]
+          },
+          {
+            "category": "decoration",
+            "allocation": 3750.0,
+            "items": [
+              {
+                "name": "Birthday Themed Balloon Arch & Banner Kit",
+                "description": "Eco-friendly balloons, LED fairy lights, backdrop foil curtains, and props",
+                "estimated_price": 3750.0,
+                "quantity": 1,
+                "search_terms": "party decoration kit balloons Birthday",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=party+decoration+kit+balloons+Birthday",
+                  "flipkart": "https://www.flipkart.com/search?q=party+decoration+kit+balloons+Birthday",
+                  "meesho": "https://www.meesho.com/search?q=party+decoration+kit+balloons+Birthday",
+                  "myntra": "https://www.myntra.com/search?q=party+decoration+kit+balloons+Birthday"
+                }
+              }
+            ]
+          },
+          {
+            "category": "entertainment",
+            "allocation": 2500.0,
+            "items": [
+              {
+                "name": "Bluetooth Party Speaker & Party Games Pack",
+                "description": "Portable high-bass music system with interactive card/board trivia games",
+                "estimated_price": 2500.0,
+                "quantity": 1,
+                "search_terms": "party games board games speaker",
+                "shopping_links": {
+                  "bookmyshow": "https://in.bookmyshow.com/search?q=party+games+board+games+speaker",
+                  "amazon": "https://www.amazon.in/s?k=party+games+board+games+speaker",
+                  "flipkart": "https://www.flipkart.com/search?q=party+games+board+games+speaker"
+                }
+              }
+            ]
+          },
+          {
+            "category": "contingency",
+            "allocation": 2500.0,
+            "items": [
+              {
+                "name": "Emergency Cushion & Disposable Tableware",
+                "description": "Last-minute supplies, extra ice, and reusable cutlery set",
+                "estimated_price": 2500.0,
+                "quantity": 1,
+                "search_terms": "biodegradable disposable party tableware",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=biodegradable+disposable+party+tableware",
+                  "flipkart": "https://www.flipkart.com/search?q=biodegradable+disposable+party+tableware",
+                  "google": "https://www.google.com/search?q=biodegradable+disposable+party+tableware"
+                }
+              }
+            ]
+          }
+        ],
+        "venue_suggestions": [
+          {
+            "name": "Community Banquet Hall Event Suite",
+            "type": "Indoor / Semi-outdoor",
+            "capacity": 25,
+            "estimated_cost": 5000.0,
+            "search_terms": "event venue for 20 guests",
+            "search_links": {
+              "google": "https://www.google.com/search?q=event+venue+for+20+guests",
+              "booking": "https://www.booking.com/search.html?ss=event+venue+for+20+guests",
+              "makemytrip": "https://www.makemytrip.com/hotels/hotel-listing/?searchText=event+venue+for+20+guests",
+              "oyorooms": "https://www.oyorooms.com/search/?location=event+venue+for+20+guests",
+              "nobroker": "https://www.nobroker.in/property/search?searchTerm=event+venue+for+20+guests"
+            }
+          }
+        ],
+        "additional_suggestions": [
+          "Use digital invitations (WhatsApp video invites) to eliminate printing expenses.",
+          "Order finger foods and platters from Swiggy/Zomato bulk delivery for maximum savings.",
+          "Create a collaborative Spotify playlist so all guests can queue their favorite party hits.",
+          "Pick up a reusable photo booth backdrop with DIY ring light for memorable social snaps."
+        ],
+        "calculation_table_inr": [
+          {
+            "category": "venue",
+            "items_count": 1,
+            "total_cost": 5000.0,
+            "percentage_of_budget": 20.0
+          },
+          {
+            "category": "catering",
+            "items_count": 1,
+            "total_cost": 11250.0,
+            "percentage_of_budget": 45.0
+          },
+          {
+            "category": "decoration",
+            "items_count": 1,
+            "total_cost": 3750.0,
+            "percentage_of_budget": 15.0
+          },
+          {
+            "category": "entertainment",
+            "items_count": 1,
+            "total_cost": 2500.0,
+            "percentage_of_budget": 10.0
+          },
+          {
+            "category": "contingency",
+            "items_count": 1,
+            "total_cost": 2500.0,
+            "percentage_of_budget": 10.0
+          }
+        ],
+        "remaining_budget": 0.0
+      }
+    },
+    {
+      "id": "rec-c650956f",
+      "timestamp": "September 26, 2026 - 07:57 PM",
+      "type": "home",
+      "title": "Home Interior Budget Plan",
+      "input_summary": {
+        "total_budget": 50000.0,
+        "num_lights": 6,
+        "num_fans": 3,
+        "num_furniture": 2,
+        "num_dining_tables": 1,
+        "has_living_room": true,
+        "has_kitchen": true,
+        "has_bedroom": true,
+        "additional_requirements": "Warm modern aesthetic with wooden tones"
+      },
+      "result_summary": {
+        "total_budget": 50000.0,
+        "remaining_budget": 8700.0,
+        "items_count": 4
+      },
+      "full_result": {
+        "total_budget": 50000.0,
+        "budget_breakdown": [
+          {
+            "category": "Lighting",
+            "allocation": 4800.0,
+            "items": [
+              {
+                "name": "Wipro / Philips Smart LED Batten & Bulbs",
+                "description": "Warm & cool white flicker-free LED fixtures with eye safety technology",
+                "estimated_price": 800.0,
+                "quantity": 6,
+                "search_terms": "philips wipro led batten light ceiling",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=philips+wipro+led+batten+light+ceiling",
+                  "flipkart": "https://www.flipkart.com/search?q=philips+wipro+led+batten+light+ceiling",
+                  "ikea": "https://www.ikea.com/in/en/search/?q=philips+wipro+led+batten+light+ceiling",
+                  "myntra": "https://www.myntra.com/search?q=philips+wipro+led+batten+light+ceiling",
+                  "ajio": "https://www.ajio.com/search/?text=philips+wipro+led+batten+light+ceiling"
+                }
+              }
+            ]
+          },
+          {
+            "category": "Ceiling Fans",
+            "allocation": 10500.0,
+            "items": [
+              {
+                "name": "Havells / Atomberg BLDC Energy Saver Fan",
+                "description": "High-speed 1200mm sweep 5-star energy saving ceiling fan with remote control",
+                "estimated_price": 3500.0,
+                "quantity": 3,
+                "search_terms": "atomberg bldc ceiling fan 1200mm",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=atomberg+bldc+ceiling+fan+1200mm",
+                  "flipkart": "https://www.flipkart.com/search?q=atomberg+bldc+ceiling+fan+1200mm",
+                  "ikea": "https://www.ikea.com/in/en/search/?q=atomberg+bldc+ceiling+fan+1200mm",
+                  "myntra": "https://www.myntra.com/search?q=atomberg+bldc+ceiling+fan+1200mm",
+                  "ajio": "https://www.ajio.com/search/?text=atomberg+bldc+ceiling+fan+1200mm"
+                }
+              }
+            ]
+          },
+          {
+            "category": "Furniture",
+            "allocation": 16000.0,
+            "items": [
+              {
+                "name": "Modern Engineered Wood Coffee Table & Accent Chairs",
+                "description": "Ergonomic, space-saving furniture set tailored for cozy living spaces",
+                "estimated_price": 8000.0,
+                "quantity": 2,
+                "search_terms": "modern wooden accent chair coffee table",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=modern+wooden+accent+chair+coffee+table",
+                  "flipkart": "https://www.flipkart.com/search?q=modern+wooden+accent+chair+coffee+table",
+                  "ikea": "https://www.ikea.com/in/en/search/?q=modern+wooden+accent+chair+coffee+table",
+                  "myntra": "https://www.myntra.com/search?q=modern+wooden+accent+chair+coffee+table",
+                  "ajio": "https://www.ajio.com/search/?text=modern+wooden+accent+chair+coffee+table"
+                }
+              }
+            ]
+          },
+          {
+            "category": "Dining Furniture",
+            "allocation": 10000.0,
+            "items": [
+              {
+                "name": "Solid Wood 4-Seater Compact Dining Table Set",
+                "description": "Contemporary finish durable dining table suitable for family dinners",
+                "estimated_price": 10000.0,
+                "quantity": 1,
+                "search_terms": "compact 4 seater dining table set wood",
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=compact+4+seater+dining+table+set+wood",
+                  "flipkart": "https://www.flipkart.com/search?q=compact+4+seater+dining+table+set+wood",
+                  "ikea": "https://www.ikea.com/in/en/search/?q=compact+4+seater+dining+table+set+wood",
+                  "myntra": "https://www.myntra.com/search?q=compact+4+seater+dining+table+set+wood",
+                  "ajio": "https://www.ajio.com/search/?text=compact+4+seater+dining+table+set+wood"
+                }
+              }
+            ]
+          }
+        ],
+        "additional_suggestions": [
+          "Opt for 5-star or BLDC motor appliances to cut monthly electricity costs significantly.",
+          "Mix statement lighting with ambient strip lights for an expensive look on a smart budget.",
+          "Compare prices on Amazon Great Indian Festival and Flipkart Big Billion Days for extra bank cashback.",
+          "Consider modular multi-functional furniture with built-in storage for compact rooms."
+        ],
+        "calculation_table": [
+          {
+            "category": "Lighting",
+            "items_count": 6,
+            "total_cost": 4800.0,
+            "percentage_of_budget": 9.6
+          },
+          {
+            "category": "Ceiling Fans",
+            "items_count": 3,
+            "total_cost": 10500.0,
+            "percentage_of_budget": 21.0
+          },
+          {
+            "category": "Furniture",
+            "items_count": 2,
+            "total_cost": 16000.0,
+            "percentage_of_budget": 32.0
+          },
+          {
+            "category": "Dining Furniture",
+            "items_count": 1,
+            "total_cost": 10000.0,
+            "percentage_of_budget": 20.0
+          }
+        ],
+        "remaining_budget": 8700.0
+      }
+    },
+    {
+      "id": "rec-demo-home-1",
+      "timestamp": "September 24, 2026 - 07:54 PM",
+      "type": "home",
+      "title": "Home Budget Plan",
+      "input_summary": {
+        "budget": 5000.0,
+        "rooms": "Living Room, Kitchen",
+        "lights": 5,
+        "fans": 4,
+        "furniture": 2,
+        "dining_tables": 1
+      },
+      "result_summary": {
+        "total_budget": 5000.0,
+        "remaining_budget": 500.0,
+        "categories": [
+          "Lighting",
+          "Ceiling Fans",
+          "Furniture"
+        ]
+      },
+      "full_result": {
+        "total_budget": 5000.0,
+        "remaining_budget": 500.0,
+        "budget_breakdown": [
+          {
+            "category": "Lighting",
+            "allocation": 1500.0,
+            "items": [
+              {
+                "name": "LED Bulb (Warm White)",
+                "description": "Energy-efficient LED bulbs for general lighting.",
+                "price": 100.0,
+                "quantity": 5,
+                "shopping_links": {
+                  "amazon": "https://www.amazon.in/s?k=led+bulb+warm+white",
+                  "flipkart": "https://www.flipkart.com/search?q=led+bulb+warm+white",
+                  "ikea": "https://www.ikea.com/in/en/search/?q=led+bulb"
+                }
+              }
+            ]
+          }
+        ],
+        "calculation_table": [
+          {
+            "category": "Lighting",
+            "items_count": 5,
+            "total_cost": 500.0,
+            "percentage_of_budget": 10.0
+          }
+        ],
+        "additional_suggestions": [
+          "Consider purchasing energy-saving appliances."
+        ]
+      }
+    },
+    {
+      "id": "rec-demo-party-2",
+      "timestamp": "September 25, 2026 - 07:54 PM",
+      "type": "party",
+      "title": "Birthday Party Budget Plan",
+      "input_summary": {
+        "budget": 5000.0,
+        "party_type": "Birthday",
+        "guests": 10,
+        "venue": "Home"
+      },
+      "result_summary": {
+        "total_budget": 5000.0,
+        "remaining_budget": 0.0,
+        "categories": [
+          "Venue",
+          "Catering",
+          "Decoration",
+          "Entertainment"
+        ]
+      },
+      "full_result": {
+        "total_budget": 5000.0,
+        "remaining_budget": 0.0,
+        "budget_breakdown": [
+          {
+            "category": "Catering",
+            "allocation": 2500.0,
+            "items": [
+              {
+                "name": "Party Food Platters",
+                "description": "Tasty appetizers and party meals from Swiggy/Zomato.",
+                "price": 2500.0,
+                "quantity": 1,
+                "shopping_links": {
+                  "swiggy": "https://www.swiggy.com",
+                  "zomato": "https://www.zomato.com"
+                }
+              }
+            ]
+          }
+        ],
+        "venue_suggestions": [],
+        "additional_suggestions": [
+          "Order finger foods in bulk for maximum savings."
+        ]
+      }
+    },
+    {
+      "id": "rec-demo-jewelry-3",
+      "timestamp": "September 26, 2026 - 07:54 PM",
+      "type": "jewelry",
+      "title": "Jewelry Budget Plan",
+      "input_summary": {
+        "budget": 5000.0,
+        "occasion": "Anniversary",
+        "preferences": "Minimalist silver"
+      },
+      "result_summary": {
+        "total_budget": 5000.0,
+        "remaining_budget": 800.0,
+        "categories": [
+          "Necklace",
+          "Earrings",
+          "Ring"
+        ]
+      },
+      "full_result": {
+        "total_budget": 5000.0,
+        "remaining_budget": 800.0,
+        "jewelry_recommendations": [
+          {
+            "item_type": "Pendant Necklace",
+            "description": "925 Sterling Silver Solitaire Pendant",
+            "style": "Modern Minimalist",
+            "estimated_price": 2200.0,
+            "shopping_links": {
+              "caratlane": "https://www.caratlane.com",
+              "bluestone": "https://www.bluestone.com"
+            }
+          }
+        ],
+        "styling_tips": [
+          "Wear with a V-neck dress for optimal balance."
+        ]
+      }
+    }
+  ]
+}
